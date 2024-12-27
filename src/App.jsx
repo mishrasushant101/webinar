@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="flex bg-gray-100 ">
+    <div className="transition-all duration-500 flex bg-gray-100 dark:bg-gray-900">
       <Sidebar />
       <MainContent />
     </div>
@@ -11,7 +11,7 @@ function App() {
 
 function Sidebar() {
   return (
-    <div className="transition-all duration-500 drop-shadow-md bg-white hover:w-1/5 w-16 h-screen p-4 group">
+    <div className="transition-all duration-500 drop-shadow-md bg-white hover:w-1/5 w-16 h-screen p-4 group dark:bg-gray-900">
       {/* Logo */}
       <div className=" h-16 w-full flex items-center justify-center">
         <div className="bg-blue-800 text-white h-8 rounded-xl px-4 hover:text-teal-400">
@@ -19,6 +19,9 @@ function Sidebar() {
           <span className="group-hover:hidden">W</span>
         </div>
       </div>
+      <button onClick={() =>{
+        document.querySelector("html").classList.toggle("dark")
+      }}className='dark:bg-white dark:text-black font-bold bg-black text-white'>Toggle theme</button>
 
       {/* Navigation Items */}
       <div className="bg-gray-100 mt-4 h-12 w-full flex items-center hover:bg-gray-300 cursor-pointer group">
@@ -53,7 +56,7 @@ function MainContent() {
       <div className="flex flex-wrap lg:flex-nowrap">
 
         {/* Profile Div */}
-        <div className="bg-white drop-shadow-xl rounded-xl w-full sm:w-2/5 lg:w-1/5 h-auto m-4 -translate-y-12 p-4">
+        <div className="transition-all duration-500 bg-white drop-shadow-xl rounded-xl w-full sm:w-2/5 lg:w-1/5 h-auto m-4 -translate-y-12 p-4 dark:bg-gray-700 dark:text-white">
           <div className="mt-4 flex justify-center">
             <img src="./pfp.jpeg" className="rounded-xl h-32" alt="Profile" />
           </div>
@@ -72,8 +75,8 @@ function MainContent() {
         </div>
 
         {/* Webinar Div */}
-        <div className="bg-white drop-shadow-xl rounded-xl p-4 w-full lg:w-2/4 h-auto m-4 mt-8">
-          <div className="bg-gray-100 h-12 w-full rounded-md flex items-center p-2 flex-wrap">
+        <div className="transition-all duration-500 bg-white drop-shadow-xl rounded-xl p-4 w-full lg:w-2/4 h-auto m-4 mt-8 dark:bg-gray-700">
+          <div className="bg-gray-100 h-12 w-full rounded-md flex items-center p-2 flex-wrap ">
             <img src="./calender.svg" className="h-7" alt="Calendar Icon" />
             <div className="text-base sm:text-lg md:text-xl px-4 font-bold truncate">
               Wednesday, 1st January 2025
@@ -102,7 +105,7 @@ function MainContent() {
         </div>
 
         {/* Schedule Webinar Div */}
-        <div className="bg-white drop-shadow-xl rounded-xl w-full lg:w-1/4 h-64 m-4 mt-8">
+        <div className="transition-all duration-500 bg-white drop-shadow-xl rounded-xl w-full lg:w-1/4 h-64 m-4 mt-8 dark:bg-gray-700 dark:text-white">
           <div className='flex justify-around mt-8'>
             <div className='hover:cursor-pointer'>
               <img src="./meeting.svg" className='h-16 bg-teal-300 hover:bg-teal-200 rounded-xl ml-8'></img>
